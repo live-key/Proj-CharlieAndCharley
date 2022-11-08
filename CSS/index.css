@@ -1,0 +1,293 @@
+/* ************************** Section Z - Showcase ************************** */
+.section-z {
+  position: relative;
+  height: 540px;
+  overflow: hidden;
+}
+
+.section-z video{
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-z .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  top: 0;
+  left: 0;
+
+  background-color: var(--overlay-color);
+}
+
+.section-z .text {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 10vh 15vw;
+}
+
+.section-z h1 {
+  font-size: 5rem;
+}
+
+.section-z p {
+  font-size: 1rem;
+  color: white;
+}
+
+.section-z a {
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  background-color: var(--showcase-btn);
+  border: 5px solid var(--showcase-btn);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+
+  margin-top: 1.5rem;
+
+  transition: transform 0.2s ease-in-out;
+}
+
+.section-z a:hover {
+  transform: scale(1.05);
+}
+
+.section-z .text .item {
+  padding: 1rem 1rem;
+  max-width: 600px;
+  color: white;
+}
+
+@media screen and (max-width: 800px) {
+  .section-z h1 {
+    font-size: 2.5rem
+  }
+}
+
+/* ************************** Section A - Slideshow ************************** */
+
+.section-a {
+  margin: 2rem;
+}
+
+.section-a .text {
+  text-align: center;
+}
+
+.section-a .text p {
+  font-weight: 900;
+}
+
+.section-a .text h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+.section-a .underline {
+  margin: 1.5rem auto;
+  height: 4px;
+  width: 100px;
+  background: black;
+  border-radius: 2px;
+}
+
+.section-a .container {
+  padding: 1rem;
+  margin: auto;
+
+  overflow: visible;
+
+  height: 500px;
+  z-index: 0; 
+}
+
+.section-a .box {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.section-a img {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+  height: 470px;
+  border-radius: 20px;
+}
+
+.section-a .blurb {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  max-height: 80%;
+  min-height: 60%;
+  min-width: 60%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  border: 5px solid var(--blurb);
+  border-radius: 20px;
+  background-color: var(--blurb);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.3);
+
+  padding: 1rem;
+  color: white;
+
+  opacity: 0;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.section-a .glide__slide img:hover + .blurb, .section-a .blurb:hover {
+  opacity: 1;
+}
+
+.section-a .blurb h1, .section-a .blurb p {
+  padding: 1rem 0;
+  max-width: 300px;
+}
+
+.section-a .blurb a {
+  color: white;
+}
+
+.section-a .blurb h1 {
+  font-size: 2.5rem;
+  padding-top: 0;
+}
+
+.section-a .blurb li:hover {
+  transform: translateX(10px);
+}
+
+.section-a .blurb li {
+  padding-top: 1rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.section-a .glide__slide {
+  text-align: center;
+}
+
+/* ****************************** Mobile Use ****************************** */
+
+@media screen and (max-width: 800px) {
+  .section-a .blurb p {
+    display: none;
+  }
+
+  .section-a .blurb h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ************************** Section B - Reviews ************************** */
+
+.section-b {
+  padding: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-b .underline {
+  margin: 1.5rem auto 0 auto;
+  height: 4px;
+  width: 100px;
+  background: black;
+  border-radius: 2px;
+}
+
+.section-b h1 {
+  font-size: 3rem;
+}
+
+.section-b .container {
+  margin-bottom: 3rem;
+  padding: 1rem;
+
+  max-width: 700px;
+
+  border: 5px solid var(--reviews);
+  border-radius: 20px;
+  background-color: var(--reviews);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.3);
+}
+
+.section-b .slideshow {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+.section-b .review {
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 430px;
+  min-width: 550px;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+
+  transform: scale(1.05);
+
+  opacity: 0;
+  transition: all 1s ease-in;
+}
+
+.section-b .review h1 {
+  font-size: 2rem;
+}
+
+.section-b .review h2 {
+  font-size: 1.5rem;
+}
+
+.section-b .review p {
+  max-width: 500px;
+}
+
+.section-b .review .stars {
+  font-size: 2.5rem;  
+}
+
+.section-b .review h1, .section-b .review h2, .section-b .review p, .section-b .review .stars {
+  padding: 0.5rem;
+}
+
+/* ****************************** Mobile Use ****************************** */
+
+@media screen and (max-width: 800px) {
+  .section-b {
+    display: none;
+  }
+}

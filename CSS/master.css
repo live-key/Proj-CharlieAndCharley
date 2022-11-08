@@ -1,0 +1,427 @@
+/* ************************** Base Initialisation ************************** */
+:root {
+  --background-theme: #F3F3F3;
+  --nav-menu-color: rgba(231, 231, 231, 0.95);
+  --nav-hover: rgba(0, 0, 0, 0.1);
+
+  --blurb: rgba(55, 64, 73, 0.6);
+  --slideshow: rgba(155, 155, 155, 0.7);
+  --showcase-btn: rgba(215, 156, 150, 0.4);
+  --sub: rgba(218, 210, 139, 0.8);
+  --reviews: rgba(190, 214, 214, 0.8);
+
+  --subscribe-color:  black;
+
+  --green-color: #DAD28B;
+  --d-blue-color: #374049;
+  --l-blue-color: #BED6D6;
+  --pink-color: #D79C96; 
+
+  --overlay-color: rgba(0, 0, 0, 0.5)
+}
+
+*:before,
+*:after,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  
+  background-image: url("/IMG/LOGOS/wallpaper.png");
+  background-position: center;
+  background-size: 200%;
+  background-attachment: fixed;
+}
+
+body {
+  color: black;
+}
+
+html, body { 
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a, p, li {
+  font-family: 'Patrick Hand', cursive;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+/* ************************** Navigation Bar ************************** */
+nav {
+  background-color: var(--background-theme);
+  height: 60px;
+
+  transition: all 0.5s ease-in;
+
+  z-index: 1;
+}
+
+nav + section {
+  display: none;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.2);
+  
+  z-index: 1;
+}
+
+.sticky-nav + section {
+    margin-top: 60px;
+}
+
+nav .hamburger {
+  display: none;
+}
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: inherit;
+  min-height: inherit;
+  padding: 0.5rem 1rem;
+}
+
+nav .brand {
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+nav img {
+  display:none;
+  max-width: 50px;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  padding: 1rem;
+  margin: 1rem 0rem;
+  font-size: 1.2rem;
+}
+
+nav li:hover {
+  background-color: var(--nav-hover);
+}
+
+li.sub {
+  background-color: var(--green-color);
+}
+
+nav h1 {
+  letter-spacing: 5px;
+  color: black;
+  font-size: 2rem;
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes navMenu {
+  from {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  to {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+}
+
+/* ************************ Subscription Section ************************ */
+#subscribe {
+  margin-top: 1rem;
+}
+
+.sub-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding-bottom: 1rem;
+
+  background-color: var(--sub);
+  backdrop-filter: blur(5px);
+
+  margin: 0 3rem;
+  border-radius: 20px 20px 0 0;
+  border-top: 5px solid var(--green-color);
+  border-left: 5px solid var(--green-color);
+  border-right: 5px solid var(--green-color);
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.3);
+}
+
+.sub-form .text {
+  padding: 1rem;
+  color: var(--subscribe-color);
+}
+
+.sub-form .text h1 {
+  font-size: 2.5rem;
+}
+
+.sub-form .text p {
+  padding: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.sub-form .text span {
+  font-weight: 900;
+}
+
+.sub-form .text li {
+  padding: 0.2rem;
+  font-weight: 700;
+}
+
+.reg {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  padding: 0 1rem;
+}
+
+.form{
+  position: relative;
+
+  height: 3rem;
+  margin: 0.5rem;
+}
+
+.sub-form button {
+  position: relative;
+
+  height: 3rem;
+  margin: 0.5rem;
+  width: auto;
+
+  margin: 0.5rem;
+
+  border: 1px solid var(--subscribe-color);
+  background: none;
+
+  font-family: 'Patrick Hand', cursive; 
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--subscribe-color);
+}
+
+.sub-form button:hover {
+  background-color: var(--nav-hover);
+  cursor: pointer;
+}
+
+.form__input {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+
+  outline: none;
+  background: none;
+
+  color: var(--subscribe-color);
+  border: 1px solid var(--subscribe-color);
+
+  transition: all 0.3s ease-in-out;
+
+  background-color: inherit;
+}
+
+.form__label {
+  position: absolute;
+  left: 1rem;
+  top: 0.95rem;
+  padding: 0.3rem;
+  cursor: text;
+  transition: all 0.2s ease-in;
+
+  transform: translateY(-22%);
+
+  font-size: 1rem;
+  font-family: 'Patrick Hand', cursive;
+
+  color: var(--subscribe-color);
+}
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~.form__label,
+.form__label:focus {
+  opacity: 0;
+}
+
+/* ************************** Footer Section ************************** */
+footer .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 25vh;
+  min-height: 150px;
+
+  background: var(--d-blue-color);
+}
+
+footer .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .icons i:hover {
+  color: var(--pink-color)
+}
+
+footer .links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .copy, .content i {
+  color: white;
+  padding: 1rem 0.5rem;
+}
+
+/* ************************** Mobile Device Use ************************** */
+@media screen and (max-width: 800px) {
+  nav .menu {
+    position: absolute;
+
+    top: 60px;
+    left: 0;
+    width: 100%;
+
+    transform: scaleY(0);
+    transform-origin: top left;
+    transition: all 0.3s ease-in;
+
+    z-index: 1;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--nav-menu-color);
+    border-top: 1px solid var(--background-theme);
+
+    transform: scaleY(0);
+    transform-origin: top left;
+    transition: all 0.3s ease-in;
+  }
+
+  nav .menu li {
+    opacity: 0;
+  }
+
+  nav li:hover {
+    background-color: var(--nav-hover);
+  }
+
+  nav .menu-show {
+    transform: scaleY(1);
+    z-index: 1;
+  }
+
+  nav .menu-show ul {
+    transform: scaleY(1);
+  }
+
+  nav .hamburger {
+    display: block;
+
+    border: none;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: none;
+
+    cursor: pointer;
+
+    transform: rotate(0deg);
+    transition: transform 0.5s ease-in;
+  }
+
+  nav .hamburger-click {
+    transform: rotate(360deg);
+  }
+
+  nav .hamburger:hover, .sticky-nav .hamburger:hover {
+    background-color: var(--nav-hover);
+  }
+
+  .sub-form .reg {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .sub-form {
+    padding: 2rem;
+  }
+
+  .sub-form p {
+    display: none;
+  }
+
+  .subscribe .text h1 {
+    font-size: 2rem;
+  }
+
+  .sub-form ul {
+    font-size: 1rem;
+    padding-top: 1rem;
+  }
+}
